@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan & Jadwal - Bank Sampah Kelurahan Sejahtera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="bg-green-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-recycle text-2xl"></i>
+                <div>
+                    <h1 class="font-bold text-xl">Bank Sampah</h1>
+                    <p class="text-xs">Kelurahan Sejahtera</p>
+                </div>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-green-200">Beranda</a></li>
+                    <li><a href="edukasi.html" class="hover:text-green-200">Edukasi Sampah</a></li>
+                    <li><a href="layanan.html" class="font-semibold hover:text-green-200">Layanan & Jadwal</a></li>
+                    <li><a href="peta.html" class="hover:text-green-200">Peta & Data</a></li>
+                    <li><a href="galeri.html" class="hover:text-green-200">Galeri & Berita</a></li>
+                    <li><a href="kontak.html" class="hover:text-green-200">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-green-500 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Layanan & Jadwal</h1>
+            <p class="text-xl max-w-3xl mx-auto">Informasi lengkap tentang jadwal pengambilan sampah, lokasi penjemputan, dan layanan lainnya dari bank sampah kami.</p>
+        </div>
+    </section>
+
+    <!-- Titik & Jadwal Penjemputan -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Titik & Jadwal Penjemputan Sampah</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Titik 1 -->
+                <div class="bg-green-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Pos RW 01</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Alamat:</h4>
+                            <p class="text-gray-600">Jl. Merdeka No. 5, RT 01/RW 01, Kel. Sejahtera</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Jadwal:</h4>
+                            <p class="text-gray-600">Setiap Sabtu, Pukul 08:00 - 10:00 WIB</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Jenis Sampah Diterima:</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Plastik (botol, kemasan)</li>
+                                <li>Kertas & kardus</li>
+                                <li>Logam (kaleng, aluminium)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Petugas:</h4>
+                            <p class="text-gray-600">Bapak Agus (0857-1234-5678)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Titik 2 -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Depan Balai Warga RW 03</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Alamat:</h4>
+                            <p class="text-gray-600">Jl. Persatuan No. 12, RT 03/RW 03, Kel. Sejahtera</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Jadwal:</h4>
+                            <p class="text-gray-600">Setiap Minggu, Pukul 09:00 - 11:00 WIB</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Jenis Sampah Diterima:</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Plastik (botol, kemasan)</li>
+                                <li>Kertas & kardus</li>
+                                <li>Logam (kaleng, aluminium)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Petugas:</h4>
+                            <p class="text-gray-600">Ibu Siti (0812-3456-7890)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Titik 3 -->
+                <div class="bg-yellow-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Kantor Pusat Bank Sampah</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Alamat:</h4>
+                            <p class="text-gray-600">Jl. Makmur Jaya No. 1, RT 05/RW 02, Kel. Sejahtera</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Jadwal:</h4>
+                            <p class="text-gray-600">Senin - Jumat, Pukul 09:00 - 15:00 WIB</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Jenis Sampah Diterima:</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Semua jenis sampah terpilah</li>
+                                <li>Sampah organik (untuk kompos)</li>
+                                <li>Sampah B3 rumah tangga</li>
+                                <li>Sampah anorganik</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Petugas:</h4>
+                            <p class="text-gray-600">Bapak Budi (0813-4567-8901)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Catatan Penting:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Pastikan sampah sudah dipilah sesuai jenisnya sebelum dibawa ke titik penjemputan.</li>
+                    <li>Sampah anorganik sebaiknya dicuci dan dikeringkan terlebih dahulu.</li>
+                    <li>Untuk sampah dalam jumlah besar (>20kg), harap menghubungi petugas terlebih dahulu.</li>
+                    <li>Jadwal mungkin berubah pada hari libur nasional - informasi akan disampaikan melalui ketua RT/RW.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi Iuran DLH -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
+                <div class="flex items-center mb-6">
+                    <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                        <i class="fas fa-info-circle text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Transparansi Biaya Layanan Kebersihan</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700">
+                    <p>Sebagai bagian dari sistem pengelolaan sampah terpadu di Kelurahan Sejahtera, setiap kepala keluarga dikenakan iuran bulanan sebesar <span class="font-semibold">Rp 25.000</span> untuk layanan pengangkutan sampah residu (sampah yang tidak bisa didaur ulang) oleh Dinas Lingkungan Hidup (DLH).</p>
+                    
+                    <p>Dana ini digunakan untuk:</p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>Operasional truk sampah DLH</li>
+                        <li>Honor petugas kebersihan DLH</li>
+                        <li>Pemeliharaan sarana dan prasarana kebersihan</li>
+                        <li>Pengelolaan sampah residu di TPA</li>
+                    </ul>
+                    
+                    <p class="font-semibold">Mekanisme Pembayaran:</p>
+                    <ol class="list-decimal list-inside ml-4 space-y-1">
+                        <li>Pembayaran dilakukan setiap awal bulan (tanggal 1-10)</li>
+                        <li>Dibayarkan kepada Ketua RT masing-masing</li>
+                        <li>Ketua RT akan menyerahkan dana ke Bank Sampah untuk kemudian disetorkan ke DLH</li>
+                        <li>Setiap pembayaran akan dicatat dalam buku administrasi RT</li>
+                    </ol>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-4">
+                        <p class="font-semibold text-blue-800">Perlu diketahui:</p>
+                        <p class="text-blue-700">Iuran ini hanya untuk sampah residu. Sampah yang bisa didaur ulang melalui Bank Sampah tidak dikenakan biaya tambahan dan justru akan memberikan nilai ekonomi bagi warga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Tambahan -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Layanan Tambahan</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Layanan 1 -->
+                <div class="bg-green-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-truck text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Penjemputan Khusus</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Untuk warga lansia atau penyandang disabilitas yang kesulitan membawa sampah ke titik penjemputan, kami menyediakan layanan penjemputan khusus.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                        <li>Gratis untuk warga berusia >70 tahun atau penyandang disabilitas</li>
+                        <li>Minimal sampah 5kg per penjemputan</li>
+                        <li>Harap daftarkan diri melalui ketua RT atau hubungi kami</li>
+                    </ul>
+                    <a href="kontak.html" class="text-green-600 font-semibold hover:underline">Hubungi kami untuk mengatur jadwal</a>
+                </div>
+                
+                <!-- Layanan 2 -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-seedling text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Pelatihan Kompos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Kami menyediakan pelatihan gratis untuk mengolah sampah organik menjadi kompos yang bernilai.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                        <li>Pelatihan dilakukan setiap bulan pertama</li>
+                        <li>Peserta mendapatkan starter kit kompos gratis</li>
+                        <li>Kompos hasil pelatihan bisa digunakan sendiri atau dijual ke bank sampah</li>
+                    </ul>
+                    <a href="galeri.html" class="text-blue-600 font-semibold hover:underline">Lihat jadwal pelatihan terbaru</a>
+                </div>
+                
+                <!-- Layanan 3 -->
+                <div class="bg-yellow-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-recycle text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Kreasi Daur Ulang</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Pelatihan membuat kerajinan dari sampah anorganik untuk meningkatkan nilai ekonomi sampah.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                        <li>Membuat tas dari kemasan plastik</li>
+                        <li>Kerajinan dari botol kaca</li>
+                        <li>Furnitur dari ban bekas</li>
+                        <li>Biaya Rp 25.000/materi (gratis untuk nasabah aktif)</li>
+                    </ul>
+                    <a href="galeri.html" class="text-yellow-600 font-semibold hover:underline">Lihat hasil kreasi warga</a>
+                </div>
+                
+                <!-- Layanan 4 -->
+                <div class="bg-purple-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-piggy-bank text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Tabungan Sampah</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Sistem tabungan dimana nilai sampah yang disetorkan warga dicatat dalam buku tabungan dan bisa diambil tunai atau digunakan untuk membayar iuran DLH.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                        <li>Bunga 0,5% per bulan untuk saldo >Rp 100.000</li>
+                        <li>Penarikan tunai setiap Jumat</li>
+                        <li>Laporan berkala via WhatsApp</li>
+                    </ul>
+                    <a href="edukasi.html" class="text-purple-600 font-semibold hover:underline">Pelajari lebih lanjut</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Tentang Kami -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Bank Sampah Kelurahan Sejahtera</h3>
+                    <p class="text-gray-400">Mewujudkan lingkungan bersih dan sehat melalui pengelolaan sampah yang bertanggung jawab dan pemberdayaan masyarakat.</p>
+                </div>
+                
+                <!-- Link Cepat -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="edukasi.html" class="text-gray-400 hover:text-white transition">Edukasi Sampah</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white transition">Layanan & Jadwal</a></li>
+                        <li><a href="peta.html" class="text-gray-400 hover:text-white transition">Peta & Data</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kontak -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>Jl. Makmur Jaya No. 1, Kel. Sejahtera, Kec. Bahagia, Kota Hijau</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(021) 12345678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>banksampah@sejahtera.id</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sosial Media -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Bank Sampah Kelurahan Sejahtera. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

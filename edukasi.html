@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukasi Sampah - Bank Sampah Kelurahan Sejahtera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="bg-green-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-recycle text-2xl"></i>
+                <div>
+                    <h1 class="font-bold text-xl">Bank Sampah</h1>
+                    <p class="text-xs">Kelurahan Sejahtera</p>
+                </div>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-green-200">Beranda</a></li>
+                    <li><a href="edukasi.html" class="font-semibold hover:text-green-200">Edukasi Sampah</a></li>
+                    <li><a href="layanan.html" class="hover:text-green-200">Layanan & Jadwal</a></li>
+                    <li><a href="peta.html" class="hover:text-green-200">Peta & Data</a></li>
+                    <li><a href="galeri.html" class="hover:text-green-200">Galeri & Berita</a></li>
+                    <li><a href="kontak.html" class="hover:text-green-200">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-green-500 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Edukasi Pengelolaan Sampah</h1>
+            <p class="text-xl max-w-3xl mx-auto">Pelajari cara memilah dan mengelola sampah dengan benar untuk menciptakan lingkungan yang lebih bersih dan berkelanjutan.</p>
+        </div>
+    </section>
+
+    <!-- Pemilahan Sampah -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Pemilahan Sampah 3 Jenis</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Organik -->
+                <div class="bg-green-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Sampah Organik</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Sampah yang berasal dari bahan-bahan hayati yang dapat terurai secara alami.</p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Contoh:</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Sisa makanan</li>
+                            <li>Daun kering</li>
+                            <li>Sayuran busuk</li>
+                            <li>Buah-buahan</li>
+                            <li>Kulit telur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Penanganan:</h4>
+                        <p class="text-gray-600">Dapat diolah menjadi kompos atau pakan ternak. Pisahkan dari sampah lain untuk memudahkan pengolahan.</p>
+                    </div>
+                </div>
+                
+                <!-- Anorganik -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-recycle text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Sampah Anorganik</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Sampah yang tidak dapat terurai secara alami tetapi dapat didaur ulang.</p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Contoh:</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Botol plastik</li>
+                            <li>Kertas & kardus</li>
+                            <li>Kaleng aluminium</li>
+                            <li>Kaca</li>
+                            <li>Kemasan plastik</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Penanganan:</h4>
+                        <p class="text-gray-600">Bersihkan dari sisa makanan, keringkan, dan pisahkan berdasarkan jenisnya. Dapat dijual ke bank sampah atau didaur ulang.</p>
+                    </div>
+                </div>
+                
+                <!-- B3 -->
+                <div class="bg-red-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-skull-crossbones text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Sampah B3</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Bahan Berbahaya dan Beracun (B3) yang memerlukan penanganan khusus.</p>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Contoh:</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Baterai bekas</li>
+                            <li>Lampu neon</li>
+                            <li>Botol pestisida</li>
+                            <li>Obat kadaluarsa</li>
+                            <li>Elektronik rusak</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Penanganan:</h4>
+                        <p class="text-gray-600">Jangan dibuang sembarangan. Kumpulkan terpisah dan serahkan ke tempat pengumpulan sampah B3 atau petugas khusus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alur Pengelolaan Sampah -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Alur Pengelolaan Sampah</h2>
+            
+            <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                    <div class="md:w-1/2 mb-6 md:mb-0">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Perjalanan Sampah dari Rumah Anda</h3>
+                        <p class="text-gray-600">Setiap sampah yang Anda pilah dengan benar akan melalui proses berikut untuk memastikan pengelolaan yang bertanggung jawab dan berkelanjutan.</p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1583511655826-05700442b31b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Alur Sampah" 
+                             class="rounded-lg w-full max-w-md h-auto">
+                    </div>
+                </div>
+                
+                <!-- Infografis -->
+                <div class="relative">
+                    <!-- Garis -->
+                    <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-green-500 transform -translate-x-1/2"></div>
+                    
+                    <!-- Langkah 1 -->
+                    <div class="relative mb-8 md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                            <h4 class="text-xl font-semibold text-gray-800">1. Pemilahan di Rumah</h4>
+                            <p class="text-gray-600">Warga memilah sampah menjadi organik, anorganik, dan B3 di rumah masing-masing.</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 flex justify-center md:justify-start">
+                            <div class="bg-green-100 text-green-800 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Langkah 2 -->
+                    <div class="relative mb-8 md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8 md:text-right order-2 mb-4 md:mb-0">
+                            <div class="bg-green-100 text-green-800 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 order-1">
+                            <h4 class="text-xl font-semibold text-gray-800">2. Pengumpulan di Titik Jemput</h4>
+                            <p class="text-gray-600">Sampah dibawa ke titik penjemputan sesuai jadwal atau dijemput petugas.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Langkah 3 -->
+                    <div class="relative mb-8 md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                            <h4 class="text-xl font-semibold text-gray-800">3. Pemrosesan di Bank Sampah</h4>
+                            <p class="text-gray-600">Sampah ditimbang, dicatat, dan diproses lebih lanjut sesuai jenisnya.</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 flex justify-center md:justify-start">
+                            <div class="bg-green-100 text-green-800 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Langkah 4 -->
+                    <div class="relative mb-8 md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8 md:text-right order-2 mb-4 md:mb-0">
+                            <div class="bg-green-100 text-green-800 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl">4</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 order-1">
+                            <h4 class="text-xl font-semibold text-gray-800">4. Distribusi ke Pengepul/Industri</h4>
+                            <p class="text-gray-600">Sampah anorganik dijual ke pengepul atau industri daur ulang.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Langkah 5 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                            <h4 class="text-xl font-semibold text-gray-800">5. Pengolahan Sampah Residu</h4>
+                            <p class="text-gray-600">Sampah residu yang tidak bisa didaur ulang dikirim ke TPA melalui DLH.</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 flex justify-center md:justify-start">
+                            <div class="bg-green-100 text-green-800 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl">5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manfaat Bank Sampah -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Manfaat Bank Sampah</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Manfaat Ekonomi -->
+                <div class="bg-green-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-money-bill-wave text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Manfaat Ekonomi</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Menghasilkan pendapatan tambahan dari sampah yang dijual</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Mengurangi pengeluaran untuk pembelian pupuk (dari kompos)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Menciptakan lapangan kerja lokal dalam pengelolaan sampah</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Menghemat biaya pengelolaan sampah kota</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Manfaat Lingkungan -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Manfaat Lingkungan</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Mengurangi volume sampah yang dibuang ke TPA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Menurunkan polusi tanah, air, dan udara dari sampah</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Menghemat sumber daya alam melalui daur ulang</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Menciptakan lingkungan yang lebih bersih dan sehat</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Tentang Kami -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Bank Sampah Kelurahan Sejahtera</h3>
+                    <p class="text-gray-400">Mewujudkan lingkungan bersih dan sehat melalui pengelolaan sampah yang bertanggung jawab dan pemberdayaan masyarakat.</p>
+                </div>
+                
+                <!-- Link Cepat -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="edukasi.html" class="text-gray-400 hover:text-white transition">Edukasi Sampah</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white transition">Layanan & Jadwal</a></li>
+                        <li><a href="peta.html" class="text-gray-400 hover:text-white transition">Peta & Data</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kontak -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>Jl. Makmur Jaya No. 1, Kel. Sejahtera, Kec. Bahagia, Kota Hijau</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(021) 12345678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>banksampah@sejahtera.id</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sosial Media -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Bank Sampah Kelurahan Sejahtera. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>

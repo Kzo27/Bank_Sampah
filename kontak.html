@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Bank Sampah Kelurahan Sejahtera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="bg-green-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-recycle text-2xl"></i>
+                <div>
+                    <h1 class="font-bold text-xl">Bank Sampah</h1>
+                    <p class="text-xs">Kelurahan Sejahtera</p>
+                </div>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-green-200">Beranda</a></li>
+                    <li><a href="edukasi.html" class="hover:text-green-200">Edukasi Sampah</a></li>
+                    <li><a href="layanan.html" class="hover:text-green-200">Layanan & Jadwal</a></li>
+                    <li><a href="peta.html" class="hover:text-green-200">Peta & Data</a></li>
+                    <li><a href="galeri.html" class="hover:text-green-200">Galeri & Berita</a></li>
+                    <li><a href="kontak.html" class="font-semibold hover:text-green-200">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-green-500 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
+            <p class="text-xl max-w-3xl mx-auto">Kami siap membantu menjawab pertanyaan Anda tentang program bank sampah Kelurahan Sejahtera.</p>
+        </div>
+    </section>
+
+    <!-- Kontak Bank Sampah -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Informasi Kontak -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8 text-gray-800">Kontak Bank Sampah</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Alamat</h3>
+                                <p class="text-gray-600">Jl. Makmur Jaya No. 1, RT 05/RW 02<br>Kelurahan Sejahtera, Kecamatan Bahagia<br>Kota Hijau, 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Telepon/WhatsApp</h3>
+                                <p class="text-gray-600">(021) 12345678<br>0812-3456-7890 (WhatsApp)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Email</h3>
+                                <p class="text-gray-600">banksampah@sejahtera.id<br>info@banksampah-sejahtera.id</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Jam Operasional</h3>
+                                <p class="text-gray-600">Senin - Jumat: 08:00 - 16:00 WIB<br>Sabtu: 08:00 - 12:00 WIB<br>Minggu & Hari Libur: Tutup</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-users text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Tim Kami</h3>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                    <li>Bapak Budi (Koordinator)</li>
+                                    <li>Ibu Siti (Admin)</li>
+                                    <li>Bapak Agus (Petugas Lapangan)</li>
+                                    <li>Ibu Rina (Petugas Lapangan)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Ikuti Kami di Media Sosial</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-600 hover:text-white transition">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-600 hover:text-white transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-600 hover:text-white transition">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-600 hover:text-white transition">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Kontak -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8 text-gray-800">Kirim Pesan</h2>
+                    
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                <option value="">Pilih subjek...</option>
+                                <option value="Pendaftaran">Pendaftaran Nasabah</option>
+                                <option value="Jadwal">Pertanyaan Jadwal</option>
+                                <option value="Sampah">Jenis Sampah</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition">Kirim Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak DLH -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 text-white p-3 rounded-full mr-4">
+                        <i class="fas fa-building text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Layanan Dinas Lingkungan Hidup (DLH)</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700">
+                    <p>Untuk pengaduan terkait sampah liar di fasilitas umum atau layanan di luar cakupan Bank Sampah Kelurahan Sejahtera, silakan hubungi kontak resmi DLH Kota Hijau berikut:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Layanan Pengaduan</h3>
+                                <p class="text-gray-600">(021) 87654321<br>0800-1234-5678 (Gratis)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Email</h3>
+                                <p class="text-gray-600">dlh@kotahijau.go.id<br>pengaduan@dlh-kotahijau.go.id</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Alamat Kantor</h3>
+                                <p class="text-gray-600">Jl. Lingkungan Hidup No. 10<br>Kota Hijau, 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1 text-gray-800">Jam Layanan</h3>
+                                <p class="text-gray-600">Senin - Kamis: 07:30 - 16:00 WIB<br>Jumat: 07:30 - 11:00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4">
+                        <p class="font-semibold text-blue-800">Layanan Darurat:</p>
+                        <p class="text-blue-700">Untuk penanganan sampah berbahaya atau keadaan darurat lingkungan, hubungi <span class="font-bold">112</span> (24 jam).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peta Lokasi -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Lokasi Kantor Bank Sampah</h2>
+            
+            <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+                <div id="map"></div>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="font-semibold mb-2 text-gray-800">Transportasi Umum</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Angkot 05 (Turun di Halte Makmur Jaya)</li>
+                        <li>Bus Kota Koridor 3 (Halte Sejahtera)</li>
+                        <li>Ojek Online tersedia di area ini</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="font-semibold mb-2 text-gray-800">Parkir Kendaraan</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Area parkir terbatas (maks 5 mobil)</li>
+                        <li>Parkir motor tersedia di halaman depan</li>
+                        <li>Hindari parkir di jalan utama</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="font-semibold mb-2 text-gray-800">Aksesibilitas</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Ramp untuk kursi roda tersedia</li>
+                        <li>Toilet disabilitas tersedia</li>
+                        <li>Tempat duduk tunggu yang nyaman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Tentang Kami -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Bank Sampah Kelurahan Sejahtera</h3>
+                    <p class="text-gray-400">Mewujudkan lingkungan bersih dan sehat melalui pengelolaan sampah yang bertanggung jawab dan pemberdayaan masyarakat.</p>
+                </div>
+                
+                <!-- Link Cepat -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="edukasi.html" class="text-gray-400 hover:text-white transition">Edukasi Sampah</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white transition">Layanan & Jadwal</a></li>
+                        <li><a href="peta.html" class="text-gray-400 hover:text-white transition">Peta & Data</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kontak -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>Jl. Makmur Jaya No. 1, Kel. Sejahtera, Kec. Bahagia, Kota Hijau</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(021) 12345678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>banksampah@sejahtera.id</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sosial Media -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Bank Sampah Kelurahan Sejahtera. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk Peta dan FAQ -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // Lokasi kantor bank sampah
+            const kantor = { lat: -6.2088, lng: 106.8456 };
+            
+            // The map, centered at kantor
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 16,
+                center: kantor,
+            });
+            
+            // Marker untuk kantor bank sampah
+            new google.maps.Marker({
+                position: kantor,
+                map: map,
+                title: "Kantor Bank Sampah Kelurahan Sejahtera"
+            });
+        }
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>

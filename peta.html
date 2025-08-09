@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta & Data - Bank Sampah Kelurahan Sejahtera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 0.75rem;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="bg-green-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-recycle text-2xl"></i>
+                <div>
+                    <h1 class="font-bold text-xl">Bank Sampah</h1>
+                    <p class="text-xs">Kelurahan Sejahtera</p>
+                </div>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-green-200">Beranda</a></li>
+                    <li><a href="edukasi.html" class="hover:text-green-200">Edukasi Sampah</a></li>
+                    <li><a href="layanan.html" class="hover:text-green-200">Layanan & Jadwal</a></li>
+                    <li><a href="peta.html" class="font-semibold hover:text-green-200">Peta & Data</a></li>
+                    <li><a href="galeri.html" class="hover:text-green-200">Galeri & Berita</a></li>
+                    <li><a href="kontak.html" class="hover:text-green-200">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-green-500 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Peta & Data Sampah</h1>
+            <p class="text-xl max-w-3xl mx-auto">Visualisasi data pengelolaan sampah dan peta lokasi layanan bank sampah di Kelurahan Sejahtera.</p>
+        </div>
+    </section>
+
+    <!-- Peta Wilayah -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Peta Wilayah Kelurahan</h2>
+            
+            <div class="bg-gray-100 p-4 rounded-xl shadow-md mb-8">
+                <div id="map"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Legenda 1 -->
+                <div class="flex items-center bg-green-50 p-3 rounded-lg">
+                    <div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+                    <span class="text-sm">Kantor Bank Sampah</span>
+                </div>
+                <!-- Legenda 2 -->
+                <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+                    <div class="w-4 h-4 bg-blue-600 rounded-full mr-2"></div>
+                    <span class="text-sm">Titik Penjemputan</span>
+                </div>
+                <!-- Legenda 3 -->
+                <div class="flex items-center bg-yellow-50 p-3 rounded-lg">
+                    <div class="w-4 h-4 bg-yellow-600 rounded-full mr-2"></div>
+                    <span class="text-sm">Kantor Kelurahan</span>
+                </div>
+                <!-- Legenda 4 -->
+                <div class="flex items-center bg-red-50 p-3 rounded-lg">
+                    <div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+                    <span class="text-sm">Batas Wilayah</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Sampah -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Dashboard Sampah Kelurahan</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Grafik Total Sampah -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Total Sampah Terkelola (kg)</h3>
+                    <div class="chart-container">
+                        <canvas id="totalChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Data diperbarui setiap tanggal 5 berdasarkan rekapitulasi penimbangan dari seluruh titik penjemputan.</p>
+                </div>
+                
+                <!-- Grafik Komposisi -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Komposisi Sampah</h3>
+                    <div class="chart-container">
+                        <canvas id="compositionChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Persentase berdasarkan jenis sampah yang terkumpul bulan Juni 2023.</p>
+                </div>
+            </div>
+            
+            <!-- Data Per RW -->
+            <div class="bg-white p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold mb-6 text-gray-800">Kinerja Per RW</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">RW</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sampah Terkelola (kg)</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">% dari Total</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kepala Keluarga</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tingkat Partisipasi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">RW 01</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">215</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25.3%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">42</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">78%</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">RW 02</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">180</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">21.2%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">35</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">65%</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">RW 03</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">195</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">22.9%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">38</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">72%</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">RW 04</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">150</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">17.6%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">48%</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">RW 05</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">110</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12.9%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">20</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">42%</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-900">Total</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-900">850</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-900">100%</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-900">160</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-900">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">63%</span>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                
+                <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2 text-gray-800">Keterangan:</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Tingkat partisipasi dihitung dari persentase kepala keluarga yang aktif menyetor sampah dalam 3 bulan terakhir.</li>
+                        <li>Data diperbarui setiap awal bulan.</li>
+                        <li>RW dengan tingkat partisipasi >70% mendapatkan penghargaan "RW Bersih" dari kelurahan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tren Pengurangan Sampah -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Tren Pengurangan Sampah ke TPA</h2>
+            
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                <div class="chart-container" style="height: 400px;">
+                    <canvas id="reductionChart"></canvas>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-2">Pencapaian Positif</h4>
+                        <p class="text-green-700">Dalam 6 bulan terakhir, volume sampah yang dikirim ke TPA berkurang sebesar <span class="font-bold">35%</span> berkat program bank sampah.</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 mb-2">Dampak Lingkungan</h4>
+                        <p class="text-blue-700">Pengurangan ini setara dengan <span class="font-bold">12 ton</span> sampah yang tidak mencemari lingkungan dan <span class="font-bold">Rp 48 juta</span> nilai ekonomi yang dihasilkan.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Target Ke Depan</h4>
+                        <p class="text-yellow-700">Kami menargetkan pengurangan sampah ke TPA sebesar <span class="font-bold">50%</span> pada akhir tahun 2023 melalui peningkatan partisipasi warga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Tentang Kami -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Bank Sampah Kelurahan Sejahtera</h3>
+                    <p class="text-gray-400">Mewujudkan lingkungan bersih dan sehat melalui pengelolaan sampah yang bertanggung jawab dan pemberdayaan masyarakat.</p>
+                </div>
+                
+                <!-- Link Cepat -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="edukasi.html" class="text-gray-400 hover:text-white transition">Edukasi Sampah</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white transition">Layanan & Jadwal</a></li>
+                        <li><a href="peta.html" class="text-gray-400 hover:text-white transition">Peta & Data</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kontak -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>Jl. Makmur Jaya No. 1, Kel. Sejahtera, Kec. Bahagia, Kota Hijau</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(021) 12345678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>banksampah@sejahtera.id</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sosial Media -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Bank Sampah Kelurahan Sejahtera. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk Peta dan Chart -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // Lokasi kelurahan (contoh koordinat)
+            const kelurahan = { lat: -6.2088, lng: 106.8456 };
+            
+            // The map, centered at kelurahan
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: kelurahan,
+                styles: [
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    }
+                ]
+            });
+            
+            // Batas wilayah (contoh poligon)
+            const kelurahanCoords = [
+                { lat: -6.2100, lng: 106.8400 },
+                { lat: -6.2100, lng: 106.8500 },
+                { lat: -6.2070, lng: 106.8500 },
+                { lat: -6.2070, lng: 106.8400 }
+            ];
+            
+            const kelurahanBoundary = new google.maps.Polygon({
+                paths: kelurahanCoords,
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#FF0000",
+                fillOpacity: 0.1,
+            });
+            kelurahanBoundary.setMap(map);
+            
+            // Marker untuk kantor bank sampah
+            new google.maps.Marker({
+                position: { lat: -6.2088, lng: 106.8456 },
+                map,
+                title: "Kantor Bank Sampah",
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: "#38A169",
+                    fillOpacity: 1,
+                    strokeColor: "#FFFFFF",
+                    strokeWeight: 1,
+                    scale: 8
+                }
+            });
+            
+            // Marker untuk titik penjemputan
+            new google.maps.Marker({
+                position: { lat: -6.2095, lng: 106.8430 },
+                map,
+                title: "Pos RW 01",
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: "#3182CE",
+                    fillOpacity: 1,
+                    strokeColor: "#FFFFFF",
+                    strokeWeight: 1,
+                    scale: 8
+                }
+            });
+            
+            new google.maps.Marker({
+                position: { lat: -6.2075, lng: 106.8470 },
+                map,
+                title: "Balai Warga RW 03",
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: "#3182CE",
+                    fillOpacity: 1,
+                    strokeColor: "#FFFFFF",
+                    strokeWeight: 1,
+                    scale: 8
+                }
+            });
+            
+            // Marker untuk kantor kelurahan
+            new google.maps.Marker({
+                position: { lat: -6.2065, lng: 106.8420 },
+                map,
+                title: "Kantor Kelurahan",
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: "#D69E2E",
+                    fillOpacity: 1,
+                    strokeColor: "#FFFFFF",
+                    strokeWeight: 1,
+                    scale: 8
+                }
+            });
+        }
+        
+        // Grafik Total Sampah
+        const totalCtx = document.getElementById('totalChart').getContext('2d');
+        const totalChart = new Chart(totalCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'],
+                datasets: [{
+                    label: 'Total Sampah Terkelola (kg)',
+                    data: [700, 780, 850, 820, 900, 850],
+                    backgroundColor: [
+                        'rgba(56, 161, 105, 0.7)',
+                        'rgba(56, 161, 105, 0.7)',
+                        'rgba(56, 161, 105, 0.7)',
+                        'rgba(56, 161, 105, 0.7)',
+                        'rgba(56, 161, 105, 0.7)',
+                        'rgba(56, 161, 105, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(56, 161, 105, 1)',
+                        'rgba(56, 161, 105, 1)',
+                        'rgba(56, 161, 105, 1)',
+                        'rgba(56, 161, 105, 1)',
+                        'rgba(56, 161, 105, 1)',
+                        'rgba(56, 161, 105, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Grafik Komposisi Sampah
+        const compositionCtx = document.getElementById('compositionChart').getContext('2d');
+        const compositionChart = new Chart(compositionCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Plastik', 'Kertas & Kardus', 'Logam', 'Kaca', 'Lainnya'],
+                datasets: [{
+                    data: [45, 30, 10, 5, 10],
+                    backgroundColor: [
+                        'rgba(56, 161, 105, 0.7)',
+                        'rgba(66, 153, 225, 0.7)',
+                        'rgba(214, 158, 46, 0.7)',
+                        'rgba(159, 122, 234, 0.7)',
+                        'rgba(160, 174, 192, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(56, 161, 105, 1)',
+                        'rgba(66, 153, 225, 1)',
+                        'rgba(214, 158, 46, 1)',
+                        'rgba(159, 122, 234, 1)',
+                        'rgba(160, 174, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+        
+        // Grafik Tren Pengurangan
+        const reductionCtx = document.getElementById('reductionChart').getContext('2d');
+        const reductionChart = new Chart(reductionCtx, {
+            type: 'line',
+            data: {
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'],
+                datasets: [
+                    {
+                        label: 'Sampah ke TPA (kg)',
+                        data: [1200, 1100, 950, 900, 850, 780],
+                        borderColor: 'rgba(234, 88, 12, 1)',
+                        backgroundColor: 'rgba(234, 88, 12, 0.1)',
+                        borderWidth: 2,
+                        fill: true
+                    },
+                    {
+                        label: 'Sampah Terdaur Ulang (kg)',
+                        data: [500, 600, 750, 800, 850, 920],
+                        borderColor: 'rgba(56, 161, 105, 1)',
+                        backgroundColor: 'rgba(56, 161, 105, 0.1)',
+                        borderWidth: 2,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
